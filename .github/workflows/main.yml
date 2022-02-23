@@ -26,7 +26,7 @@ jobs:
         run: |
           echo "Application name: ${{env.APPLICATION_NAME}}"
       - name: List current dir
-        run: ls -la
+        run: pwd
   
   my-second-job:
   # The type of runner that the job will run on
