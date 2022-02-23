@@ -26,7 +26,11 @@ jobs:
         run: |
           echo "Application name: ${{env.APPLICATION_NAME}}"
       - name: List current dir
-        run: pwd
+        run: ls -la
+      - name: Clone repo
+        uses: actions/checkout@v1
+      - name: List current dir
+        run: ls -la
   
   my-second-job:
   # The type of runner that the job will run on
@@ -39,3 +43,7 @@ jobs:
         run: echo "Hello, world from second job"
       - name: Print deployment package name
         run: echo "Package name is ${{env.DEPLOY_PACKAGE_NAME}}"
+      - name: Lets test our packages
+        run: aws --version
+      - name: Check zip
+        run: zip
